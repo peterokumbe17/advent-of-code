@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# -- Day 1 --
-
-# # Day 1: Trebuchet?!
+# Day 1: Trebuchet?!
 
 
 # *** [AoC DAY 1 Challenge] ***
@@ -74,6 +72,8 @@ for digit in arrCalibrationValues:
     totalValue = totalValue + int(digit)
 
 print('Sum of calibration values:', totalValue)
+
+# ====================================================================================================================
 
 # *** [PART 2] ***
 # ! Your calculation isn't quite right. It looks like some of the digits in the calibration document's lines of text are actually spelled out with letters:
