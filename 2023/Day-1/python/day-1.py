@@ -12,7 +12,7 @@ import re
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the full path to the data source file
-file_path = os.path.join(current_dir, "..\\data", "day-1-input.txt")
+file_path = os.path.join(current_dir, "../data", "day-1-input.txt")
 
 # ! Open the data file for reading mode (= default mode if the mode is not specified)
 file = open(file_path, "r")
@@ -41,8 +41,6 @@ arrFileData = arrFileData.split('\n')
 #     #line = line.replace("\n", "")
 #     line = line.strip() # Remove all trailing spaces that exist in the string 'line'
 #     #print(line[-1])
-
-
 
 print(arrFileData)
 print(len(arrFileData))
@@ -73,7 +71,7 @@ for digit in arrCalibrationValues:
 
 print('Sum of calibration values:', totalValue)
 
-# ====================================================================================================================
+print('# ====================================================================================================================')
 
 # *** [PART 2] ***
 # ! Your calculation isn't quite right. It looks like some of the digits in the calibration document's lines of text are actually spelled out with letters:
@@ -267,66 +265,66 @@ print('Sum of calibration values:', totalValue)
 # # print(len(calValues2))
 # print(sum) # print solution to part 2
 
-# *** !!! TESTING !!! ***
-# =====================================================================================================================
-lineDigitWords = 'this one is one4my name  peter 3five onehaha'
-#lineDigitWords = re.findall(r'one|two|three|four|five|six|seven|eight|nine|ten', lineDigitWords)
-lineDigitIdx = lineDigitWords.find('one')
+# # *** !!! TESTING !!! ***
+# # =====================================================================================================================
+# lineDigitWords = 'this one is one4my name  peter 3five onehaha'
+# #lineDigitWords = re.findall(r'one|two|three|four|five|six|seven|eight|nine|ten', lineDigitWords)
+# lineDigitIdx = lineDigitWords.find('one')
 
-print(lineDigitIdx)
+# print(lineDigitIdx)
 
 
-text = 'twonine'
+# text = 'twonine'
 
-text = re.sub('two', '2', text)
-text = re.sub('five', '5', text)
-text = re.sub('nine', '9', text)
+# text = re.sub('two', '2', text)
+# text = re.sub('five', '5', text)
+# text = re.sub('nine', '9', text)
 
-arrWords = ['one', 'five', 'nine']
-arrIndexes = [22, 0, 4]
+# arrWords = ['one', 'five', 'nine']
+# arrIndexes = [22, 0, 4]
 
-print(arrWords[0], arrIndexes[0])
-print(arrWords[1], arrIndexes[1])
-print(arrWords[2], arrIndexes[2])
+# print(arrWords[0], arrIndexes[0])
+# print(arrWords[1], arrIndexes[1])
+# print(arrWords[2], arrIndexes[2])
 
-for i in range(len(arrWords)):
-    for j in range(i+1, len(arrWords)):
-        if arrIndexes[j] < arrIndexes[i]:
-            temp = arrIndexes[j]
-            arrIndexes[j] = arrIndexes[i]
-            arrIndexes[i] = temp
+# for i in range(len(arrWords)):
+#     for j in range(i+1, len(arrWords)):
+#         if arrIndexes[j] < arrIndexes[i]:
+#             temp = arrIndexes[j]
+#             arrIndexes[j] = arrIndexes[i]
+#             arrIndexes[i] = temp
 
-            temp = arrWords[j]
-            arrWords[j] = arrWords[i]
-            arrWords[i] = temp
+#             temp = arrWords[j]
+#             arrWords[j] = arrWords[i]
+#             arrWords[i] = temp
 
-if not('five' in arrWords):
-    print('five does not exist')
-else:
-    print('five exists')
-
-# arrtest = []
-
-# if (not arrtest):
-#     print('empty')
+# if not('five' in arrWords):
+#     print('five does not exist')
 # else:
-#     print('not empty')
+#     print('five exists')
 
-word = 'abcdefg'
+# # arrtest = []
 
-print(list(enumerate(word)))
+# # if (not arrtest):
+# #     print('empty')
+# # else:
+# #     print('not empty')
 
-wordTest = 'wordonegoingoneagaintwoback'
-wordTestDigits = []
+# word = 'abcdefg'
 
-for i, letter in enumerate(wordTest):
-    if 'one' in wordTest[i:i + len('one')]:
-        wordTestDigits.append('one')
+# print(list(enumerate(word)))
 
-print(wordTestDigits)
+# wordTest = 'wordonegoingoneagaintwoback'
+# wordTestDigits = []
 
-print(arrIndexes)
-print(arrWords)
-# print(text)
-# arr = ['1']
-# print(arr[-1])
+# for i, letter in enumerate(wordTest):
+#     if 'one' in wordTest[i:i + len('one')]:
+#         wordTestDigits.append('one')
+
+# print(wordTestDigits)
+
+# print(arrIndexes)
+# print(arrWords)
+# # print(text)
+# # arr = ['1']
+# # print(arr[-1])
