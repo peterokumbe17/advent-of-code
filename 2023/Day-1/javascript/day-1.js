@@ -53,14 +53,19 @@ arrFileData.forEach((line, counter) => {
     let lineDigits = line.match(/\d/g) || [];
     let lineWordDigits = [];
 
-    // Find every occurrence of word-based digits
-    numbers.forEach(wordDigit => {
-        const regex = new RegExp(wordDigit, 'g');
-        let match;
-        while ((match = regex.exec(line)) !== null) {
-            lineWordDigits.push(wordDigit);
-        }
-    });
+    // EDGE CASE HINT: Cater for edge cases such as 'xxxseveninexxx' = '79'
+    // - Traverse through the current string line, then find EVERY occurrence of a word digit in the current line's
+    //   string and store EACH found word digit in an array list ('lineWordDigits')
+    for (let i = 0; i < line.length; i++) {
+        // IF 'one' exists anywhere between the ith and 'i + wordDigit.length'th indexed char of the current string line
+        numbers.forEach(wordDigit => {
+            if (line.substring(i, i + wordDigit.length).includes(wordDigit)) {
+                lineWordDigits.push(wordDigit);
+            }
+        });
+    }
+
+    // console.log(lineWordDigits);
 
     if (counter === 48) {
         console.log(lineDigits);
