@@ -67,10 +67,10 @@ arrFileData.forEach((line, counter) => {
 
     // console.log(lineWordDigits);
 
-    if (counter === 48) {
-        console.log(lineDigits);
-        console.log(lineWordDigits);
-    }
+    // if (counter === 48) {
+    //     console.log(lineDigits);
+    //     console.log(lineWordDigits);
+    // }
 
     // Determine the first and last digits
     let firstDigitIndex = lineDigits.length > 0 ? line.indexOf(lineDigits[0]) : -1;

@@ -124,10 +124,10 @@ for line in arrFileData:
     #print(lineDigits)
     #print(lineWordDigits)
 
-    if (counter == 49): #990
-        print(lineDigits)
-        print(lineWordDigits)
-        #print(wordDigitIndexes)
+    # if (counter == 49): #990
+    #     print(lineDigits)
+    #     print(lineWordDigits)
+    #     #print(wordDigitIndexes)
 # ---------------------------------------------------------------------------------------------------------------
     # Retrieve indexes of *first* and *last* numeric AND word digits found in current string line
     firstDigitIndex = -1
