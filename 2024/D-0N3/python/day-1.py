@@ -76,7 +76,7 @@ print("Total distance:", totalDistance)
 # ## Part 2
 
 # %%
-# *** [PART 1] ***
+# *** [PART 2] ***
 # ! PROBLEM: This time, you'll need to figure out exactly *how often* EACH number from the LEFT list appears in the RIGHT list.
 # - Calculate a *total similarity score* by adding up EACH number in the LEFT list after multiplying EACH number by the *number of times* that it appears in the RIGHT list.
 # ---------------------------------------------------------------------------------------------------------------------
