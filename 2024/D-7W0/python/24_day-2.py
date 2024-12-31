@@ -13,7 +13,7 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the full path to the data source file
-file_path = os.path.join(current_dir, "../data", "24_day-1-input.txt")
+file_path = os.path.join(current_dir, "../data", "24_day-2_input.txt")
 
 # ! Open the file for reading mode (= default mode if the mode is not specified)
 file = open(file_path, "r")
@@ -24,7 +24,7 @@ arrFileData = file.read()
 # Split the data read from the file by every new line encountered and store in an array list
 arrFileData = arrFileData.split('\n')
 
-print(arrFileData)
+# print(arrFileData)
 # ====================================================================================================================
 
 # %% [markdown]
@@ -94,7 +94,7 @@ for report in arrFileData:
 
 totalSafeReports = arrSafeReportsCheck.count(True)
 
-print(totalSafeReports)
+print("Total safe reports (PART 1):", totalSafeReports)
 # ====================================================================================================================
 
 # %% [markdown]
@@ -125,6 +125,4 @@ for report in arrFileData:
 
 totalSafeReports = arrSafeReportsCheck.count(True)
 
-print(totalSafeReports)
-
-
+print("Total safe reports (PART 2):", totalSafeReports)

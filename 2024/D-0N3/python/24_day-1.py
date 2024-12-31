@@ -13,7 +13,7 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the full path to the data source file
-file_path = os.path.join(current_dir, "../data", "24_day-1-input.txt")
+file_path = os.path.join(current_dir, "../data", "24_day-1_input.txt")
 
 # ! Open the file for reading mode (= default mode if the mode is not specified)
 file = open(file_path, "r")
