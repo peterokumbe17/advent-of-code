@@ -11,7 +11,7 @@ import re
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the full path to the data source file
-file_path = os.path.join(current_dir, "../data", "day-2-input.txt")
+file_path = os.path.join(current_dir, "../data", "23_day-2_input.txt")
 
 # ! Open the data file for reading mode (= default mode if the mode is not specified)
 file = open(file_path, "r")

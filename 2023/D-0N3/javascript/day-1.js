@@ -5,7 +5,7 @@ const path = require('path');
 const currentDir = __dirname;
 
 // Construct the full path to the data source file
-const filePath = path.join(currentDir, "../data", "day-1-input.txt");
+const filePath = path.join(currentDir, "../data", "23_day-1_input.txt");
 
 // Open the data file for reading
 const fileData = fs.readFileSync(filePath, 'utf-8');
