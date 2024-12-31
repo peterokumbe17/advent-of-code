@@ -7,8 +7,6 @@
 # %%
 # *** [IMPORT DATA] ***
 # =====================================================================================================================
-import re
-
 arrLColumn = [] # int array var to store list of numbers in left column of text file
 arrRColumn = [] # int array var to store list of numbers in right column of text file
 
@@ -32,7 +30,7 @@ arrRColumn.sort()
 # Output the sorted arrays
 print("Column 1 (L):", arrLColumn)
 print("Column 2 (R):", arrRColumn)
-
+# ====================================================================================================================
 
 # %% [markdown]
 # ## Part 1
@@ -69,7 +67,6 @@ totalDistance = sum(arrPairDistances)
 
 print(arrPairDistances)
 print("Total distance:", totalDistance)
-
 # ====================================================================================================================
 
 # %% [markdown]

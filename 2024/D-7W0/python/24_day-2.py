@@ -9,9 +9,6 @@
 # =====================================================================================================================
 import re
 
-lColumn = [] # int array var to store list of numbers in left column of text file
-rColumn = [] # int array var to store list of numbers in right column of text file
-
 # ! Open the file for reading mode (= default mode if the mode is not specified)
 file = open("../data/24_day-2-input.txt", "r")
 
@@ -92,7 +89,6 @@ for report in arrFileData:
 totalSafeReports = arrSafeReportsCheck.count(True)
 
 print(totalSafeReports)
-
 # ====================================================================================================================
 
 # %% [markdown]
@@ -122,6 +118,7 @@ for report in arrFileData:
         arrSafeReportsCheck.append(False)
 
 totalSafeReports = arrSafeReportsCheck.count(True)
+
 print(totalSafeReports)
 
 
