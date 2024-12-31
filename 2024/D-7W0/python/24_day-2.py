@@ -7,10 +7,16 @@
 # %%
 # *** [IMPORT DATA] ***
 # =====================================================================================================================
-import re
+import os
+
+# Get the current directory of this current file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the full path to the data source file
+file_path = os.path.join(current_dir, "../data", "24_day-1-input.txt")
 
 # ! Open the file for reading mode (= default mode if the mode is not specified)
-file = open("../data/24_day-2-input.txt", "r")
+file = open(file_path, "r")
 
 # Read all the data in the file
 arrFileData = file.read()

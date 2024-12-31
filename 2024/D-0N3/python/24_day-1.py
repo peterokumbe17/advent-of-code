@@ -7,11 +7,19 @@
 # %%
 # *** [IMPORT DATA] ***
 # =====================================================================================================================
-arrLColumn = [] # int array var to store list of numbers in left column of text file
-arrRColumn = [] # int array var to store list of numbers in right column of text file
+import os
+
+# Get the current directory of this current file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the full path to the data source file
+file_path = os.path.join(current_dir, "../data", "24_day-1-input.txt")
 
 # ! Open the file for reading mode (= default mode if the mode is not specified)
-file = open("../data/24_day-1-input.txt", "r")
+file = open(file_path, "r")
+
+arrLColumn = [] # int array var to store list of numbers in left column of text file
+arrRColumn = [] # int array var to store list of numbers in right column of text file
 
 # ! Read through EACH line in the text file
 for line in file:
@@ -28,8 +36,8 @@ arrLColumn.sort()
 arrRColumn.sort()
 
 # Output the sorted arrays
-print("Column 1 (L):", arrLColumn)
-print("Column 2 (R):", arrRColumn)
+# print("Column 1 (L):", arrLColumn)
+# print("Column 2 (R):", arrRColumn)
 # ====================================================================================================================
 
 # %% [markdown]
@@ -65,8 +73,8 @@ for lNum in arrLColumn:
 # Calculate total distance between all pairings
 totalDistance = sum(arrPairDistances)
 
-print(arrPairDistances)
-print("Total distance:", totalDistance)
+# print(arrPairDistances)
+print("Total distance (PART 1):", totalDistance)
 # ====================================================================================================================
 
 # %% [markdown]
@@ -94,7 +102,7 @@ for num in arrLColumn:
 
 totalSimilarityScore = sum(arrLColumnSimilarityScores)
 
-print(arrLColumnSimilarityScores)
-print(totalSimilarityScore)
+# print(arrLColumnSimilarityScores)
+print("Total similarity score (PART 2):", totalSimilarityScore)
 
 
