@@ -31,7 +31,7 @@ arrFileData = arrFileData.split('\n')
 # ## Helper functions
 
 # %%
-def checkSafeReport(arrLevels):
+def check_safe_report(arrLevels):
     # Check if current report == safe
     # func 'all':
     # - Returns a boolean
@@ -47,7 +47,7 @@ def checkSafeReport(arrLevels):
     return validIncrease or validDecrease
 
 # %%
-def problemDampener(arrLevels):
+def problem_dampener(arrLevels):
     # Check IF the current report = safe IF it's array list of number levels passes the safe check conditions IFF any 1 number is removed from the list
     for i in range(len(arrLevels)):
         # Remove the i-th element in the array list
@@ -55,7 +55,7 @@ def problemDampener(arrLevels):
         # - '[x:]': Returns a new list of the original list excluding everything BEFORE the xth element
         modifiedArrLevels = arrLevels[:i] + arrLevels[i + 1:]  # Remove the i-th element in the array list
         
-        if checkSafeReport(modifiedArrLevels) == True:
+        if check_safe_report(modifiedArrLevels) == True:
             return True
     
     return False
@@ -85,7 +85,7 @@ for report in arrFileData:
     arrLevels = [int(num) for num in arrLevels]
 
     # Check if current report == safe
-    isSafeReport = checkSafeReport(arrLevels)
+    isSafeReport = check_safe_report(arrLevels)
 
     if isSafeReport == True:
         arrSafeReportsCheck.append(True)
@@ -116,7 +116,7 @@ for report in arrFileData:
     arrLevels = [int(num) for num in arrLevels]
 
     # Check if current report == safe after applying the *Problem Dampener*
-    isSafeReport = problemDampener(arrLevels)
+    isSafeReport = problem_dampener(arrLevels)
 
     if isSafeReport == True:
         arrSafeReportsCheck.append(True)
