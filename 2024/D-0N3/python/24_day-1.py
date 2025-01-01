@@ -47,7 +47,7 @@ arrRColumn.sort()
 # *** [PART 1] ***
 # ! PROBLEM: Lists of 2 historian groups are NOT similar
 # - Maybe the lists are only off by a small amount - to find out, we need to pair up the numbers & measure how far apart they are.
-# - TASK: Pair the {1st, 2nd, 3rd, ...} SMALLEST number in the L list with the {1st, 2nd, 3rd, ...} SMALLEST number in the R list.
+# - TODO: Pair the {1st, 2nd, 3rd, ...} SMALLEST number in the L list with the {1st, 2nd, 3rd, ...} SMALLEST number in the R list.
 #   - Within EACH pair, figure out *how far apart* the 2 numbers are from one another.
 #     - E.g. If pair #3 (L) with #7 (R), then the distance apart between them = 4 (vice versa).
 #   - Then add up all the distances between EACH pair to get the *total distance*.
@@ -83,7 +83,7 @@ print("Total distance (PART 1):", totalDistance)
 # %%
 # *** [PART 2] ***
 # ! PROBLEM: This time, you'll need to figure out exactly *how often* EACH number from the LEFT list appears in the RIGHT list.
-# - TASK: Calculate a *total similarity score* by adding up EACH number in the LEFT list after multiplying EACH number by the *number of times* that it appears in the RIGHT list.
+# - TODO: Calculate a *total similarity score* by adding up EACH number in the LEFT list after multiplying EACH number by the *number of times* that it appears in the RIGHT list.
 # ---------------------------------------------------------------------------------------------------------------------
 from collections import Counter
 

@@ -70,7 +70,7 @@ def problemDampener(arrLevels):
 # - EACH line represents a report. 
 # - EACH report contains a list of numbers called *levels* that are separated by spaces.
 # - The Red-Nosed reactor safety systems can only tolerate levels that are either gradually increasing or gradually decreasing.
-# - TASK: Count how many reports are considered safe.
+# - TODO: Count how many reports are considered safe.
 #   - A report only counts as safe IFF:
 #     - The levels (column numbers) in the report (row) are ALL either increasing or decreasing.
 #     - Any 2 adjacent levels (column numbers) differ by at least 1 (NOT = 0) and at most 3 (NOT > 3). 
@@ -104,7 +104,7 @@ print("Total safe reports (PART 1):", totalSafeReports)
 # *** [PART 2] ***
 # ! PROBLEM: The engineers are surprised by the low number of safe reports until they realize they forgot to tell you about the *Problem Dampener*.
 # - The Problem Dampener is a reactor-mounted module that lets the reactor safety systems *tolerate a single bad level* in what would otherwise be a safe report.
-# - TASK: The same rules apply as before, except if *removing a single level* from an UNSAFE report would make it SAFE, then the report would now count as SAFE.
+# - TODO: The same rules apply as before, except if *removing a single level* from an UNSAFE report would make it SAFE, then the report would now count as SAFE.
 # ---------------------------------------------------------------------------------------------------------------------
 totalSafeReports = 0
 arrSafeReportsCheck = []
