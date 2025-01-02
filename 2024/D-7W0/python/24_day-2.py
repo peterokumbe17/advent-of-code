@@ -19,12 +19,12 @@ file_path = os.path.join(current_dir, "../data", "24_day-2_input.txt")
 file = open(file_path, "r")
 
 # Read all the data in the file
-arrFileData = file.read()
+file_data = file.read()
 
 # Split the data read from the file by every new line encountered and store in an array list
-arrFileData = arrFileData.split('\n')
+file_data = file_data.split('\n')
 
-# print(arrFileData)
+# print(file_data)
 # ====================================================================================================================
 
 # %% [markdown]
@@ -32,10 +32,10 @@ arrFileData = arrFileData.split('\n')
 
 # %%
 def check_safe_report(arrLevels):
-    # Check if current report == safe
-    # func 'all':
-    # - Returns a boolean
-    # - Checks if the given param condition holds for all adjacent pairs in an array list
+    # ! Check if current report == safe
+    # - func 'all':
+    #   - Returns a boolean
+    #   - Checks if the given param condition holds for all adjacent pairs in an array list
 
     # Check if the list of level numbers are strictly INCREASING with a difference of at least 1 and at most 3
     validIncrease = all(arrLevels[i] < arrLevels[i + 1] and (1 <= (arrLevels[i + 1] - arrLevels[i]) <= 3) for i in range(len(arrLevels) - 1))
@@ -78,7 +78,7 @@ def problem_dampener(arrLevels):
 totalSafeReports = 0
 arrSafeReportsCheck = []
 
-for report in arrFileData:
+for report in file_data:
     # Split the report string line of numbers (levels) into a string array list of numbers (levels)
     arrLevels = report.split()
     # Convert each string value in the array into an integer
@@ -109,7 +109,7 @@ print("Total safe reports (PART 1):", totalSafeReports)
 totalSafeReports = 0
 arrSafeReportsCheck = []
 
-for report in arrFileData:
+for report in file_data:
     # Split the report string line of numbers (levels) into a string array list of numbers (levels)
     arrLevels = report.split()
     # Convert each string value in the array into an integer

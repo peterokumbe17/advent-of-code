@@ -20,9 +20,9 @@ file_path = os.path.join(current_dir, "../data", "24_day-3_input.txt")
 file = open(file_path, "r")
 
 # Read all the data in the file
-arrFileData = file.read()
+file_data = file.read()
 
-#print(arrFileData)
+#print(file_data)
 # ====================================================================================================================
 
 # %% [markdown]
@@ -47,15 +47,14 @@ def mul(X,Y):
 # Regular expression to match 'mul(X,Y)'
 #regex_mul = r"mul\(\d{1,3},\d{1,3}\)"  # Matches 'mul(' > followed by 1-3 digits > ',' > and 1-3 digits > then ')'
 regex_mul = r"mul\((\d{1,3}),(\d{1,3})\)"  # Captures X and Y in 'mul(X,Y)' as groups: E.g. '(X, Y)'
-sumResults = 0
 
 # Find all matches in the string
-arrMatches = re.findall(regex_mul, arrFileData)
+arrMatches = re.findall(regex_mul, file_data)
 
 # Call func 'mul(X,Y)' for each match and store the results
 arrResults = [mul(int(x), int(y)) for x, y in arrMatches]
 
-sumResults += sum(arrResults)
+sumResults = sum(arrResults)
 
 print("Multiplication result (PART 1):", sumResults)
 
@@ -83,9 +82,9 @@ arrMatches = [] # string array var to store all valid captured 'mul(X,Y)' occurr
 
 # ! Find all matches in the string
 # While the end of the string has NOT been reached
-while pos < len(arrFileData):
+while pos < len(file_data):
     # Search for the next occurrence of "don't()", "do()", or 'mul(X,Y)'
-    match = re.search(f"{regex_controls}|{regex_mul}", arrFileData[pos:])
+    match = re.search(f"{regex_controls}|{regex_mul}", file_data[pos:])
     
     # IF no matches found, then exit the loop
     if not match:
