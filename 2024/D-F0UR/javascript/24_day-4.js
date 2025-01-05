@@ -90,6 +90,8 @@ function find_word_in_diagonals(grid, word) {
     return numMatches;
 }
 
+// ====================================================================================================================
+
 // Part 1
 
 // Define the words to search for
@@ -103,6 +105,8 @@ for (const word of words) {
 }
 
 console.log("Number of times that 'XMAS' appears (PART 1):", numMatches);
+
+// ====================================================================================================================
 
 // Part 2
 

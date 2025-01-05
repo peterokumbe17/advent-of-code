@@ -175,6 +175,7 @@ def find_word_in_diagonals(grid, word):
 #             numMatches += sum(1 for _ in matches)
 
 #     return numMatches
+# ====================================================================================================================
 
 # %% [markdown]
 # ## Part 1
@@ -199,6 +200,7 @@ for word in words:
 # print(find_word_in_diagonals(file_data, words[1]))
 
 print("Number of times that 'XMAS' appears (PART 1):", numMatches)
+# ====================================================================================================================
 
 # %% [markdown]
 # ## Part 2
