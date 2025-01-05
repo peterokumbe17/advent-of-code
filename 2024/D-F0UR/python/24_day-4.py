@@ -53,6 +53,7 @@ def find_vertical(grid, word): # Finds vertical matches
         column = ''.join(grid[row][col_index] for row in range(num_rows))
         
         # T2B search
+        # - Use re.finditer to find all occurrences of the word in the row
         matches = re.finditer(word, column)
         numMatches += sum(1 for _ in matches)
 
