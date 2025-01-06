@@ -6,8 +6,8 @@
 
 # %%
 import os
-from itertools import permutations
-# from concurrent.futures import ProcessPoolExecutor
+import copy
+# from itertools import permutations
 
 # %% [markdown]
 # ## Import data
@@ -20,11 +20,11 @@ from itertools import permutations
 # - E.g. The first rule ('47|53'), means that IF an *update* includes BOTH page number '47' AND page number '53', then page number '47' must be printed at ANY point BEFORE page number '53'. (47 doesn't necessarily need to be IMMEDIATELY before 53; other pages are allowed to be between them.)
 # - The *second section* (separated from the first part by an empty line) specifies the *page numbers (separated by ',') of each update (one per line)*. Because most safety manuals are different, the pages needed in the updates are different too.
 # =====================================================================================================================
-# ! Get the current directory of this current file
+# Get the current directory of this current file
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the full path to the data source file
-file_path = os.path.join(current_dir, "../data", "24_day-5_input-test.txt")
+file_path = os.path.join(current_dir, "../data", "24_day-5_input.txt")
 
 # ! Open the file for reading mode (= default mode if the mode is not specified)
 file = open(file_path, "r")
@@ -45,9 +45,9 @@ updates = file_data[1].split("\n")
 for j in range(len(updates)):
     updates[j] = updates[j].split(",")
 
-print(rules)
+# print(rules)
 # print(len(rules))
-print(updates)
+# print(updates)
 # print(len(updates))
 # ====================================================================================================================
 
@@ -55,72 +55,72 @@ print(updates)
 # ## Helper functions
 
 # %%
-def is_correct_update(rules, update):
-    arrCheckUpdates = []
+def is_correct_update(_rules, _update):
+    _arrCheckUpdates = []
     
-    for rule in rules:
-        leftPN = rule[0]
-        rightPN = rule[1]
+    for rule in _rules:
+        _leftPN = rule[0]
+        _rightPN = rule[1]
 
         # Check IF the left page number (PN) of the CURRENT rule exists in the CURRENT update
-        if leftPN in update:
-            leftPN_idx = update.index(leftPN)
+        if _leftPN in _update:
+            _leftPN_idx = _update.index(_leftPN)
         else:
-            leftPN_idx = -1 # Not found
+            _leftPN_idx = -1 # Not found
 
-        if rightPN in update:
-            rightPN_idx = update.index(rightPN)
+        if _rightPN in _update:
+            _rightPN_idx = _update.index(_rightPN)
         else:
-            rightPN_idx = -1 # Not found
+            _rightPN_idx = -1 # Not found
 
         # Check IF the LHS page number comes BEFORE the RHS page number in the CURRENT update
-        if leftPN_idx == -1 or rightPN_idx == -1:
-            arrCheckUpdates.append(True)
+        if _leftPN_idx == -1 or _rightPN_idx == -1:
+            _arrCheckUpdates.append(True)
         else:
-            if leftPN_idx < rightPN_idx:
-                arrCheckUpdates.append(True)
+            if _leftPN_idx < _rightPN_idx:
+                _arrCheckUpdates.append(True)
         
-            if leftPN_idx > rightPN_idx:
-                arrCheckUpdates.append(False)
+            if _leftPN_idx > _rightPN_idx:
+                _arrCheckUpdates.append(False)
     
     # Check IF ALL rule checks pass for the list of page numbers in the CURRENT update
-    if False not in arrCheckUpdates:
+    if False not in _arrCheckUpdates:
         return True
 
     return False
 
 # %%
-def is_incorrect_update(rules, update):
-    arrCheckUpdates = []
+def is_incorrect_update(_rules, _update):
+    _arrCheckUpdates = []
     
-    for rule in rules:
-        leftPN = rule[0]
-        rightPN = rule[1]
+    for rule in _rules:
+        _leftPN = rule[0]
+        _rightPN = rule[1]
 
         # Check IF the left page number (PN) of the CURRENT rule exists in the CURRENT update
-        if leftPN in update:
-            leftPN_idx = update.index(leftPN)
+        if _leftPN in _update:
+            _leftPN_idx = _update.index(_leftPN)
         else:
-            leftPN_idx = -1 # Not found
+            _leftPN_idx = -1 # Not found
 
-        if rightPN in update:
-            rightPN_idx = update.index(rightPN)
+        if _rightPN in _update:
+            _rightPN_idx = _update.index(_rightPN)
         else:
-            rightPN_idx = -1 # Not found
+            _rightPN_idx = -1 # Not found
 
         # Check IF the LHS page number comes BEFORE the RHS page number in the CURRENT update
-        if leftPN_idx == -1 or rightPN_idx == -1:
-            arrCheckUpdates.append(True)
+        if _leftPN_idx == -1 or _rightPN_idx == -1:
+            _arrCheckUpdates.append(True)
         else:
-            if leftPN_idx < rightPN_idx:
-                arrCheckUpdates.append(True)
+            if _leftPN_idx < _rightPN_idx:
+                _arrCheckUpdates.append(True)
         
-            if leftPN_idx > rightPN_idx:
-                arrCheckUpdates.append(False)
+            if _leftPN_idx > _rightPN_idx:
+                _arrCheckUpdates.append(False)
     
     # ! Get list of INCORRECT updates
     # - NOTE: Check IF NOT all rule checks pass for the list of page numbers in the CURRENT update
-    if False in arrCheckUpdates:
+    if False in _arrCheckUpdates:
         return True
 
     return False
@@ -172,31 +172,80 @@ arrInvalidUpdates = []
 arrValidUpdates = []
 sumMiddlePNs = 0
 
-for update in updates:
+# ! Create a deep (independent) copy of the updates list of data, such that changes made to the copy do not affect the original array to still test Part 1 or re-run Part 2 with correct output
+# - NOTE: Not using a deep copy will modify the original array to have fully corrected updates after running Part 2, therefore no incorrect updates will be found anymore
+updates_copy = copy.deepcopy(updates)
+
+for update in updates_copy:
     if is_incorrect_update(rules, update) == True:
         arrInvalidUpdates.append(update)
+
+# print(arrInvalidUpdates)
     
 # ! Correctly order the invalid updates
 for update in arrInvalidUpdates:
-    #print(update)
-    #print("-----------------------------")
+    arrCheckUpdates = []
+    ruleCounter = 0
+    
+    while ruleCounter < len(rules):
+        rule = rules[ruleCounter]
+        leftPN = rule[0]
+        rightPN = rule[1]
 
-    # """Check if the condition can be met by any permutation of the array."""
-    # # Generate permutations lazily
-    all_perms = permutations(update)
-    # #print(all_perms)
+        # Check IF the left page number (PN) of the CURRENT rule exists in the CURRENT update
+        if leftPN in update:
+            leftPN_idx = update.index(leftPN)
+        else:
+            leftPN_idx = -1 # Not found
 
-    for perm in all_perms:
-        if is_correct_update(rules, perm) == True:
-            # func 'list(tuple)'
-            # - Convert tuple back to list
-            validUpdate = list(perm)
-            #print(validUpdate)
-            arrValidUpdates.append(validUpdate)
+        if rightPN in update:
+            rightPN_idx = update.index(rightPN)
+        else:
+            rightPN_idx = -1 # Not found
+
+        # Check IF the LHS page number comes BEFORE the RHS page number in the CURRENT update
+        if leftPN_idx == -1 or rightPN_idx == -1:
+            arrCheckUpdates.append(True)
+        else:
+            if leftPN_idx < rightPN_idx:
+                arrCheckUpdates.append(True)
+        
+            if leftPN_idx > rightPN_idx:
+                arrCheckUpdates.append(False)
+
+                # Swap the positions of these 2 values in the array to make them pass the rule check
+                temp = update[leftPN_idx]
+                update[leftPN_idx] = update[rightPN_idx]
+                update[rightPN_idx] = temp
+
+                # Reset the rule counter to see if the newly ordered list will pass ALL rule checks
+                ruleCounter = 0
+                arrCheckUpdates = []
+                 
+        ruleCounter += 1 # after searching EACH rule
+    
+    # ! Get list of newly CORRECTED updates
+    # - NOTE: Check IF all rule checks pass for the list of page numbers in the CURRENT update
+    if False not in arrCheckUpdates:
+        arrValidUpdates.append(update)
+
+    # NOTE: The permutation solution below works 100% BUT is VERY memory exhaustive for large lists (you will wait DAYS for output!!! :x), therefore stuck to using above solution 
+    # # """Check if the condition can be met by any permutation of the array."""
+    # # # Generate permutations lazily
+    # all_perms = permutations(update)
+    # # #print(all_perms)
+
+    # for perm in all_perms:
+    #     if is_correct_update(rules, perm) == True:
+    #         # func 'list(tuple)'
+    #         # - Convert tuple back to list
+    #         validUpdate = list(perm)
+    #         #print(validUpdate)
+    #         arrValidUpdates.append(validUpdate)
 
     #print("=============================")
 
-#print(arrValidUpdates)
+# print(arrValidUpdates)
 
 # TODO: Get sum of all middle page numbers in the new list of correctly ordered & now valid updates
 for update in arrValidUpdates:
