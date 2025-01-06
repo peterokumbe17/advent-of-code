@@ -56,72 +56,64 @@ for (let j = 0; j < updates.length; j++) {
 // console.log(rules.length);
 // console.log(updates);
 // console.log(updates.length);
-// ====================================================================================================================
+// =====================================================================================================================
 
 // Helper Functions
-function isCorrectUpdate(rules, update) {
-    let arrCheckUpdates = [];
+function isCorrectUpdate(_rules, _update) {
+    const _arrCheckUpdates = [];
 
-    for (let rule of rules) {
-        let leftPN = rule[0];
-        let rightPN = rule[1];
+    for (const rule of _rules) {
+        const _leftPN = rule[0];
+        const _rightPN = rule[1];
 
         // Check IF the left page number (PN) of the CURRENT rule exists in the CURRENT update
-        let leftPNIdx = update.includes(leftPN) ? update.indexOf(leftPN) : -1;
-        let rightPNIdx = update.includes(rightPN) ? update.indexOf(rightPN) : -1;
+        const _leftPN_idx = _update.includes(_leftPN) ? _update.indexOf(_leftPN) : -1;
+        const _rightPN_idx = _update.includes(_rightPN) ? _update.indexOf(_rightPN) : -1;
 
         // Check IF the LHS page number comes BEFORE the RHS page number in the CURRENT update
-        if (leftPNIdx === -1 || rightPNIdx === -1) {
-            arrCheckUpdates.push(true);
+        if (_leftPN_idx === -1 || _rightPN_idx === -1) {
+            _arrCheckUpdates.push(true);
         } else {
-            if (leftPNIdx < rightPNIdx) {
-                arrCheckUpdates.push(true);
+            if (_leftPN_idx < _rightPN_idx) {
+                _arrCheckUpdates.push(true);
             }
-            if (leftPNIdx > rightPNIdx) {
-                arrCheckUpdates.push(false);
+            if (_leftPN_idx > _rightPN_idx) {
+                _arrCheckUpdates.push(false);
             }
         }
     }
 
     // Check IF ALL rule checks pass for the list of page numbers in the CURRENT update
-    if (!arrCheckUpdates.includes(false)) {
-        return true;
-    }
-
-    return false;
+    return !_arrCheckUpdates.includes(false);
 }
 
-function isIncorrectUpdate(rules, update) {
-    let arrCheckUpdates = [];
+function isIncorrectUpdate(_rules, _update) {
+    const _arrCheckUpdates = [];
 
-    for (let rule of rules) {
-        let leftPN = rule[0];
-        let rightPN = rule[1];
+    for (const rule of _rules) {
+        const _leftPN = rule[0];
+        const _rightPN = rule[1];
 
         // Check IF the left page number (PN) of the CURRENT rule exists in the CURRENT update
-        let leftPNIdx = update.includes(leftPN) ? update.indexOf(leftPN) : -1;
-        let rightPNIdx = update.includes(rightPN) ? update.indexOf(rightPN) : -1;
+        const _leftPN_idx = _update.includes(_leftPN) ? _update.indexOf(_leftPN) : -1;
+        const _rightPN_idx = _update.includes(_rightPN) ? _update.indexOf(_rightPN) : -1;
 
         // Check IF the LHS page number comes BEFORE the RHS page number in the CURRENT update
-        if (leftPNIdx === -1 || rightPNIdx === -1) {
-            arrCheckUpdates.push(true);
+        if (_leftPN_idx === -1 || _rightPN_idx === -1) {
+            _arrCheckUpdates.push(true);
         } else {
-            if (leftPNIdx < rightPNIdx) {
-                arrCheckUpdates.push(true);
+            if (_leftPN_idx < _rightPN_idx) {
+                _arrCheckUpdates.push(true);
             }
-            if (leftPNIdx > rightPNIdx) {
-                arrCheckUpdates.push(false);
+            if (_leftPN_idx > _rightPN_idx) {
+                _arrCheckUpdates.push(false);
             }
         }
     }
 
     // Get list of INCORRECT updates
     // NOTE: Check IF NOT all rule checks pass for the list of page numbers in the CURRENT update
-    if (arrCheckUpdates.includes(false)) {
-        return true;
-    }
-
-    return false;
+    return _arrCheckUpdates.includes(false);
 }
 
 // *** [PART 1] ***
@@ -129,22 +121,22 @@ function isIncorrectUpdate(rules, update) {
 let arrValidUpdates = [];
 let sumMiddlePNs = 0;
 
-for (let update of updates) {
+for (const update of updates) {
     if (isCorrectUpdate(rules, update)) {
         arrValidUpdates.push(update);
     }
 }
 
 // Get sum of all middle page numbers in the list of valid updates
-for (let update of arrValidUpdates) {
-    let middlePNIdx = Math.floor(update.length / 2);
-    let middlePN = update[middlePNIdx];
+for (const update of arrValidUpdates) {
+    const middlePN_idx = Math.floor(update.length / 2);
+    const middlePN = update[middlePN_idx];
 
-    sumMiddlePNs += parseInt(middlePN);
+    sumMiddlePNs += parseInt(middlePN, 10);
 }
 
 console.log("Sum of all correct middle page numbers (PART 1):", sumMiddlePNs);
-// ====================================================================================================================
+// =====================================================================================================================
 
 // *** [PART 2] ***
 // =====================================================================================================================
@@ -152,38 +144,65 @@ let arrInvalidUpdates = [];
 arrValidUpdates = [];
 sumMiddlePNs = 0;
 
-for (let update of updates) {
+// Create a deep (independent) copy of the updates array
+const updatesCopy = JSON.parse(JSON.stringify(updates));
+
+for (const update of updatesCopy) {
     if (isIncorrectUpdate(rules, update)) {
         arrInvalidUpdates.push(update);
     }
 }
 
 // Correctly order the invalid updates
-for (let update of arrInvalidUpdates) {
-    // Generate permutations lazily
-    const permute = (arr, prefix = []) => {
-        if (arr.length === 0) {
-            return [prefix];
-        }
-        return arr.flatMap((v, i) => permute(arr.slice(0, i).concat(arr.slice(i + 1)), prefix.concat(v)));
-    };
+for (const update of arrInvalidUpdates) {
+    const arrCheckUpdates = [];
+    let ruleCounter = 0;
 
-    let allPerms = permute(update);
+    while (ruleCounter < rules.length) {
+        const rule = rules[ruleCounter];
+        const leftPN = rule[0];
+        const rightPN = rule[1];
 
-    for (let perm of allPerms) {
-        if (isCorrectUpdate(rules, perm)) {
-            let validUpdate = [...perm]; // Clone the valid permutation
-            arrValidUpdates.push(validUpdate);
+        // Check IF the left page number (PN) of the CURRENT rule exists in the CURRENT update
+        const leftPN_idx = update.includes(leftPN) ? update.indexOf(leftPN) : -1;
+        const rightPN_idx = update.includes(rightPN) ? update.indexOf(rightPN) : -1;
+
+        // Check IF the LHS page number comes BEFORE the RHS page number in the CURRENT update
+        if (leftPN_idx === -1 || rightPN_idx === -1) {
+            arrCheckUpdates.push(true);
+        } else {
+            if (leftPN_idx < rightPN_idx) {
+                arrCheckUpdates.push(true);
+            }
+            if (leftPN_idx > rightPN_idx) {
+                arrCheckUpdates.push(false);
+
+                // Swap the positions of these 2 values in the array to make them pass the rule check
+                const temp = update[leftPN_idx];
+                update[leftPN_idx] = update[rightPN_idx];
+                update[rightPN_idx] = temp;
+
+                // Reset the rule counter to see if the newly ordered list will pass ALL rule checks
+                ruleCounter = 0;
+                arrCheckUpdates.length = 0;
+            }
         }
+
+        ruleCounter++;
+    }
+
+    // Get list of newly CORRECTED updates
+    if (!arrCheckUpdates.includes(false)) {
+        arrValidUpdates.push(update);
     }
 }
 
-// Get sum of all middle page numbers in the new list of correctly ordered & now valid updates
-for (let update of arrValidUpdates) {
-    let middlePNIdx = Math.floor(update.length / 2);
-    let middlePN = update[middlePNIdx];
+// Get sum of all middle page numbers in the new list of correctly ordered updates
+for (const update of arrValidUpdates) {
+    const middlePN_idx = Math.floor(update.length / 2);
+    const middlePN = update[middlePN_idx];
 
-    sumMiddlePNs += parseInt(middlePN);
+    sumMiddlePNs += parseInt(middlePN, 10);
 }
 
 console.log("Sum of all correct middle page numbers (PART 2):", sumMiddlePNs);
