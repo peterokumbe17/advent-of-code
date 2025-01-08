@@ -85,6 +85,7 @@ def evaluate_expression_concat(numbers, operators):
             #     result *= int(concatenatedNum) # E.g. '3+2[*76]'
 
     return result
+# ====================================================================================================================
 
 # %% [markdown]
 # ## Part 1
