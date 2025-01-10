@@ -1,5 +1,5 @@
 # %% [markdown]
-# # Day 6: Resonant Collinearity
+# # Day 8: Resonant Collinearity
 
 # %% [markdown]
 # ## Import libraries
