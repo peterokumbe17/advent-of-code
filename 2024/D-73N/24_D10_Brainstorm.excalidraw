@@ -108,7 +108,7 @@
       "version": 24,
       "versionNonce": 1073482340,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736692114555,
       "link": null,
       "locked": false,
@@ -143,7 +143,7 @@
       "version": 253,
       "versionNonce": 1971517284,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736692820497,
       "link": null,
       "locked": false,
@@ -162,8 +162,8 @@
       "type": "text",
       "x": 1107.4219316324354,
       "y": 547.5461587662568,
-      "width": 1297.7791748046875,
-      "height": 250,
+      "width": 1395.6190185546875,
+      "height": 275,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -177,20 +177,20 @@
       "index": "a5",
       "roundness": null,
       "seed": 1173079004,
-      "version": 1145,
-      "versionNonce": 1338911972,
+      "version": 1230,
+      "versionNonce": 1361995068,
       "isDeleted": false,
-      "boundElements": null,
-      "updated": 1736710170186,
+      "boundElements": [],
+      "updated": 1736774772660,
       "link": null,
       "locked": false,
-      "text": "*IDEA:\n1. Traverse through entire grid, store position of '0' found.\n2. While current position != '9' AND position NOT out of grid bounds (r < 0; c < 0; r > rTotal; c > cTotal):\n- Traverse through path in grid of increasing heights by 1.\n- Up: IF grid[currentRow - 1][currentCol] == (grid[currentRow][currentCol] + 1), then: currentRow -= 1 (Move 1 up) ELSE break;\n- Down: \" \"\n- Left: \" \"\n- Right: \" \"\n3. Once search for path is over, append ALL positions in path to a list?? TO check against next possible path (brute force method)\n- HINT: Use 'visited' to check a position as visited, such that do not go through the SAME path when checking for different paths.",
+      "text": "*IDEA:\n1. Traverse through entire grid, store position of '0' found.\n2. While current position != '9' AND position NOT out of grid bounds (r < 0; c < 0; r > rTotal; c > cTotal):\n- Traverse through path in grid of increasing heights by 1.\n- Up: IF grid[currentRow - 1][currentCol] == (grid[currentRow][currentCol] + 1), then: currentRow -= 1 (Move 1 up) ELSE break;\n- Down: \" \"\n- Left: \" \"\n- Right: \" \"\n3. Once search for path is over, append ALL positions in path to a list?? TO check against next possible path (brute force iterative method)\n- HINT: Use 'visited' to check a position as visited, such that do not go through the SAME path when checking for different paths -> This is\ngiving DFS/BFS vibes, so NO ADA WEI! :p.",
       "fontSize": 20,
       "fontFamily": 5,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "*IDEA:\n1. Traverse through entire grid, store position of '0' found.\n2. While current position != '9' AND position NOT out of grid bounds (r < 0; c < 0; r > rTotal; c > cTotal):\n- Traverse through path in grid of increasing heights by 1.\n- Up: IF grid[currentRow - 1][currentCol] == (grid[currentRow][currentCol] + 1), then: currentRow -= 1 (Move 1 up) ELSE break;\n- Down: \" \"\n- Left: \" \"\n- Right: \" \"\n3. Once search for path is over, append ALL positions in path to a list?? TO check against next possible path (brute force method)\n- HINT: Use 'visited' to check a position as visited, such that do not go through the SAME path when checking for different paths.",
+      "originalText": "*IDEA:\n1. Traverse through entire grid, store position of '0' found.\n2. While current position != '9' AND position NOT out of grid bounds (r < 0; c < 0; r > rTotal; c > cTotal):\n- Traverse through path in grid of increasing heights by 1.\n- Up: IF grid[currentRow - 1][currentCol] == (grid[currentRow][currentCol] + 1), then: currentRow -= 1 (Move 1 up) ELSE break;\n- Down: \" \"\n- Left: \" \"\n- Right: \" \"\n3. Once search for path is over, append ALL positions in path to a list?? TO check against next possible path (brute force iterative method)\n- HINT: Use 'visited' to check a position as visited, such that do not go through the SAME path when checking for different paths -> This is\ngiving DFS/BFS vibes, so NO ADA WEI! :p.",
       "autoResize": true,
       "lineHeight": 1.25
     },
@@ -217,7 +217,7 @@
       "version": 225,
       "versionNonce": 1095746404,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736692824483,
       "link": null,
       "locked": false,
@@ -254,7 +254,7 @@
       "version": 29,
       "versionNonce": 683797724,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736692840409,
       "link": null,
       "locked": false,
@@ -374,10 +374,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        76.39280037763137,
-        -61.57031672226992
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "ID9kWtNdC-HseVVBedb-S",
@@ -402,7 +399,7 @@
       "version": 44,
       "versionNonce": 511049572,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736692843126,
       "link": null,
       "locked": false,
@@ -582,10 +579,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        17.10286575618602,
-        37.6263046636094
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "r8juGAAVtRbK4VP7AwDUe",
@@ -610,7 +604,7 @@
       "version": 64,
       "versionNonce": 463416668,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736692850410,
       "link": null,
       "locked": false,
@@ -870,10 +864,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        56.412715426057275,
-        2.452726757654659
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "fyGly-AwJ1Yl3p98bA3tL",
@@ -898,7 +889,7 @@
       "version": 54,
       "versionNonce": 409476708,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693080596,
       "link": null,
       "locked": false,
@@ -1118,10 +1109,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        -8.075365773692624,
-        0.8075365773692056
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "ubE54V5qN5kd5ywBva4qW",
@@ -1146,7 +1134,7 @@
       "version": 59,
       "versionNonce": 427920996,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693086620,
       "link": null,
       "locked": false,
@@ -1382,10 +1370,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        -3.2301463094771634,
-        3.2301463094771066
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "Og5-qi_szRbF7U-6rLzct",
@@ -1410,7 +1395,7 @@
       "version": 133,
       "versionNonce": 1231559780,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693098552,
       "link": null,
       "locked": false,
@@ -1946,10 +1931,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        -12.920585237908313,
-        -176.85051044387058
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "726QGEQQjDzTkcgwHMyaL",
@@ -1974,7 +1956,7 @@
       "version": 70,
       "versionNonce": 744754652,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693104165,
       "link": null,
       "locked": false,
@@ -2258,10 +2240,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        -20.99595101160105,
-        66.21799934428032
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "3phFfXHXR0vTfvmYdDqDI",
@@ -2286,7 +2265,7 @@
       "version": 120,
       "versionNonce": 1072218460,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693140055,
       "link": null,
       "locked": false,
@@ -2770,10 +2749,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        26.648707053185944,
-        158.2771691643773
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "8can0eCcT2VouubKXTbXn",
@@ -2798,7 +2774,7 @@
       "version": 3,
       "versionNonce": 1859743452,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693148575,
       "link": null,
       "locked": false,
@@ -2814,10 +2790,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "6jxgD2J1z3us-_2NGobw_",
@@ -2842,7 +2815,7 @@
       "version": 3,
       "versionNonce": 2111245404,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693149781,
       "link": null,
       "locked": false,
@@ -2858,10 +2831,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "gIVJcoRYtU6r_vrsooSuQ",
@@ -2886,7 +2856,7 @@
       "version": 3,
       "versionNonce": 583506396,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693150677,
       "link": null,
       "locked": false,
@@ -2902,10 +2872,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "zJgFATdObA7lv4CvpriWs",
@@ -2930,7 +2897,7 @@
       "version": 3,
       "versionNonce": 1431377756,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693151545,
       "link": null,
       "locked": false,
@@ -2946,10 +2913,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "kVi_Dtks4DpGamioBkEzE",
@@ -2974,7 +2938,7 @@
       "version": 3,
       "versionNonce": 651789532,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693152640,
       "link": null,
       "locked": false,
@@ -2990,10 +2954,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "94AtPJyJko71oLJnFmBUW",
@@ -3018,7 +2979,7 @@
       "version": 3,
       "versionNonce": 445047388,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693153519,
       "link": null,
       "locked": false,
@@ -3034,10 +2995,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "IFlYM9I2CrTXmlY_tGxm_",
@@ -3062,7 +3020,7 @@
       "version": 3,
       "versionNonce": 2101293020,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693154650,
       "link": null,
       "locked": false,
@@ -3078,10 +3036,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "hZJCW03g6F1-ZoJMYrGst",
@@ -3106,7 +3061,7 @@
       "version": 3,
       "versionNonce": 1034448220,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693155558,
       "link": null,
       "locked": false,
@@ -3122,10 +3077,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "aR57U7hnZOiyDnoMzXSUO",
@@ -3150,7 +3102,7 @@
       "version": 3,
       "versionNonce": 1143511772,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693156833,
       "link": null,
       "locked": false,
@@ -3166,10 +3118,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "da9j-psnJoNVpuXIk1Bn_",
@@ -3194,7 +3143,7 @@
       "version": 3,
       "versionNonce": 162892644,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693162747,
       "link": null,
       "locked": false,
@@ -3210,10 +3159,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "kz3nQc-VgqYQIaWnEVEYP",
@@ -3238,7 +3184,7 @@
       "version": 3,
       "versionNonce": 1187452388,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693163868,
       "link": null,
       "locked": false,
@@ -3254,10 +3200,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "FN7Prk5HC8IEKX6jyhZDb",
@@ -3282,7 +3225,7 @@
       "version": 3,
       "versionNonce": 1263972452,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693164780,
       "link": null,
       "locked": false,
@@ -3298,10 +3241,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "tJYKGnlSSNwOvRBOAb8vw",
@@ -3326,7 +3266,7 @@
       "version": 3,
       "versionNonce": 1767791332,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693165557,
       "link": null,
       "locked": false,
@@ -3342,10 +3282,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "RGMVJZGjO_scoaOrqCWU4",
@@ -3370,7 +3307,7 @@
       "version": 3,
       "versionNonce": 1024988516,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693165781,
       "link": null,
       "locked": false,
@@ -3386,10 +3323,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "FmymtxFZ610o4xnzsZvun",
@@ -3414,7 +3348,7 @@
       "version": 9,
       "versionNonce": 1506392676,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693167586,
       "link": null,
       "locked": false,
@@ -3454,10 +3388,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        -17.765804702124,
-        0
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "HKVP2Zzrn6EgAGVJdHGFZ",
@@ -3482,7 +3413,7 @@
       "version": 3,
       "versionNonce": 913679588,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693167972,
       "link": null,
       "locked": false,
@@ -3498,10 +3429,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "ygdPkSoM1_NF29Edg8-Nz",
@@ -3526,7 +3454,7 @@
       "version": 3,
       "versionNonce": 1077649252,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693169703,
       "link": null,
       "locked": false,
@@ -3542,10 +3470,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "FuYXVtUoKxc3le197O6oD",
@@ -3570,7 +3495,7 @@
       "version": 3,
       "versionNonce": 1586866660,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693171078,
       "link": null,
       "locked": false,
@@ -3586,10 +3511,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "JA6pcXGUWl7RKtAlxpI08",
@@ -3614,7 +3536,7 @@
       "version": 3,
       "versionNonce": 859685988,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693172044,
       "link": null,
       "locked": false,
@@ -3630,10 +3552,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "WIhMhQ4kJpj3vh4bPNcom",
@@ -3658,7 +3577,7 @@
       "version": 3,
       "versionNonce": 1110306532,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693173216,
       "link": null,
       "locked": false,
@@ -3674,10 +3593,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "4qIXWcVBdqNYUe_D1eJIY",
@@ -3702,7 +3618,7 @@
       "version": 3,
       "versionNonce": 429926756,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693174190,
       "link": null,
       "locked": false,
@@ -3718,10 +3634,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "h0UI0DtjBTizKQEg8-OOG",
@@ -3746,7 +3659,7 @@
       "version": 3,
       "versionNonce": 2047767524,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693175275,
       "link": null,
       "locked": false,
@@ -3762,10 +3675,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "-I77FRFK18HbKub5n76LG",
@@ -3790,7 +3700,7 @@
       "version": 52,
       "versionNonce": 1359799388,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693346408,
       "link": null,
       "locked": false,
@@ -3827,7 +3737,7 @@
       "version": 76,
       "versionNonce": 1418581348,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693231418,
       "link": null,
       "locked": false,
@@ -3864,7 +3774,7 @@
       "version": 53,
       "versionNonce": 1864251748,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693333686,
       "link": null,
       "locked": false,
@@ -3938,7 +3848,7 @@
       "version": 139,
       "versionNonce": 1868535652,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736693415852,
       "link": null,
       "locked": false,
@@ -3949,6 +3859,154 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "IF grid[currR][currC] == '9', then also BREAK;\n- This is because the path search will have ended",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "DECO8zS0xHqxD8wCdu_H4",
+      "type": "text",
+      "x": 778.7955927102482,
+      "y": 992.5136194474362,
+      "width": 198.51053245688624,
+      "height": 442.69633365057723,
+      "angle": 0,
+      "strokeColor": "#2f9e44",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "dotted",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "b01",
+      "roundness": null,
+      "seed": 1489473084,
+      "version": 171,
+      "versionNonce": 430532612,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1736774691884,
+      "link": null,
+      "locked": false,
+      "text": "89010123\n78121874\n87430965\n96549874\n45678903\n32019012\n01329801\n10456732",
+      "fontSize": 40.99040126394232,
+      "fontFamily": 6,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "89010123\n78121874\n87430965\n96549874\n45678903\n32019012\n01329801\n10456732",
+      "autoResize": true,
+      "lineHeight": 1.35
+    },
+    {
+      "id": "5V6rocaCCngfl4ShgV3Fw",
+      "type": "text",
+      "x": 722.9441029991369,
+      "y": 993.3637849886625,
+      "width": 25.92097763749102,
+      "height": 435.4724243098494,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "dotted",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "b02",
+      "roundness": null,
+      "seed": 185054268,
+      "version": 244,
+      "versionNonce": 465946500,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1736774691884,
+      "link": null,
+      "locked": false,
+      "text": "0\n1\n2\n3\n4\n5\n6\n7",
+      "fontSize": 40.321520769430464,
+      "fontFamily": 6,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "0\n1\n2\n3\n4\n5\n6\n7",
+      "autoResize": true,
+      "lineHeight": 1.35
+    },
+    {
+      "id": "6wix0nH_XAObfpt-8MmKw",
+      "type": "text",
+      "x": 778.0861104361865,
+      "y": 940.0497971564741,
+      "width": 196.25958963351113,
+      "height": 39.93253022699453,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "dotted",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "b03",
+      "roundness": null,
+      "seed": 6185660,
+      "version": 148,
+      "versionNonce": 1781151492,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1736774691884,
+      "link": null,
+      "locked": false,
+      "text": "0 1 2 3 4 5 6 7",
+      "fontSize": 29.57965201999595,
+      "fontFamily": 6,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "0 1 2 3 4 5 6 7",
+      "autoResize": true,
+      "lineHeight": 1.35
+    },
+    {
+      "id": "DJjVk4zf92jI2ERdeV2od",
+      "type": "text",
+      "x": 641.5613523321238,
+      "y": 869.6391076097533,
+      "width": 476.1209716796875,
+      "height": 33.07536577369271,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "b04",
+      "roundness": null,
+      "seed": 1353370428,
+      "version": 230,
+      "versionNonce": 936717956,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1736774696113,
+      "link": null,
+      "locked": false,
+      "text": "Larger topographical graph example 2",
+      "fontSize": 26.460292618954167,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Larger topographical graph example 2",
       "autoResize": true,
       "lineHeight": 1.25
     }
