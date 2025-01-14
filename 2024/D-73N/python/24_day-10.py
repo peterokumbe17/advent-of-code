@@ -194,6 +194,8 @@ print("Total sum scores of all trailheads (PART 1):", sumScores)
 # - NOTE: A trailhead's rating is the number of *distinct hiking trails* which *begin at that trailhead*.
 # ! TODO: Calculate the SUM of the *ratings* of ALL trailheads* in the grid.
 #====================================================================================================================
+# ! Create a deep (independent) copy of the data, such that changes made to the copy do not affect the original data to still test/re-run Part 1/2 with the correct INITIAL (and not modified) data
+# - NOTE: Not using a deep copy will modify the original data after running Part 1/2, therefore no correct output will be calculated anymore.
 top_map2 = copy.deepcopy(file_data)
 top_map2 = [list(row) for row in top_map2.split('\n') if row]
 numRows = len(top_map2)
