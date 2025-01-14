@@ -82,7 +82,6 @@ def find_paths(grid, trailheadPos):
     dfs(trailheadPos[0], trailheadPos[1], [])
     
     return paths
-# ====================================================================================================================
 
 # %%
 def print_paths(paths, grid):
@@ -100,6 +99,7 @@ def print_paths(paths, grid):
             print(f"({row}, {col}) = {grid[row][col]}", end=" -> ")
         
         print()
+# ====================================================================================================================
 
 # %% [markdown]
 # ## Part 1
