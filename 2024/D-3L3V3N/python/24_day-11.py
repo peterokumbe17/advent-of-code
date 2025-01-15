@@ -70,7 +70,6 @@ def change_numbers(numbers):
                 arrChangedNumbers.append(str(int(num) * 2024))
     
     return arrChangedNumbers
-# ====================================================================================================================
 
 # %%
 @lru_cache(None)
@@ -94,6 +93,7 @@ def calculate_growth(stone, remaining_blinks):
         result = calculate_growth(stone * 2024, remaining_blinks - 1)
         
         return result
+# ====================================================================================================================
 
 # %% [markdown]
 # ## Part 1
