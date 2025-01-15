@@ -7,6 +7,7 @@
 # %%
 import os
 import copy
+from functools import lru_cache
 
 # %% [markdown]
 # ## Import data
@@ -30,7 +31,7 @@ file_data = file.read().strip()
 
 file_data = file_data.split(" ")
 
-print(file_data)
+# print(file_data)
 # ====================================================================================================================
 
 # %% [markdown]
@@ -69,7 +70,30 @@ def change_numbers(numbers):
                 arrChangedNumbers.append(str(int(num) * 2024))
     
     return arrChangedNumbers
-# =====================================================================================================================
+# ====================================================================================================================
+
+# %%
+@lru_cache(None)
+def calculate_growth(stone, remaining_blinks):
+    if remaining_blinks == 0:
+        return 1
+    
+    if stone == 0:
+        result = calculate_growth(1, remaining_blinks - 1)
+        
+        return result
+
+    elif len(str(stone)) % 2 == 0:
+        mid = len(str(stone)) // 2
+        left = int(str(stone)[:mid])
+        right = int(str(stone)[mid:])
+        result = calculate_growth(left, remaining_blinks - 1) + calculate_growth(right, remaining_blinks - 1)
+        
+        return result
+    else:
+        result = calculate_growth(stone * 2024, remaining_blinks - 1)
+        
+        return result
 
 # %% [markdown]
 # ## Part 1
@@ -110,19 +134,21 @@ print("Total number of stones after 25 blinks (PART 1):", sumStones)
 #====================================================================================================================
 # ! Create a deep (independent) copy of the data, such that changes made to the copy do not affect the original data to still test/re-run Part 1/2 with the correct INITIAL (and not modified) data
 # - NOTE: Not using a deep copy will modify the original data after running Part 1/2, therefore no correct output will be calculated anymore.
-stones = copy.deepcopy(file_data)
+stones2 = copy.deepcopy(file_data)
 blink = 75
+sumStones2 = 0
 
-# Change stones every time you blink
-for i in range(blink):
-    stones = change_numbers(stones)
+# # Change stones every time you blink
+# for i in range(blink):
+#     stones = change_numbers(stones)
 
-# Calculate the number of stones after x blinks
-sumStones = len(stones)
+# # Calculate the number of stones after x blinks
+# sumStones = len(stones)
 
-# print(stones)
+for stone in map(int, stones2):
+    sumStones2 += calculate_growth(stone, blink)
 
-print("Total number of stones after 75 blinks (PART 2):", sumStones)
+print("Total number of stones after 75 blinks (PART 2):", sumStones2)
 
 # %%
 
