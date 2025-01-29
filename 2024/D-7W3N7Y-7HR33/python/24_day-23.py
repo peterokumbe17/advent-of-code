@@ -32,7 +32,7 @@ file = open(file_path, "r")
 # Read all the data in the file
 file_data = file.read().strip()
 
-# Split by claw machines
+# Split by each line
 file_data = file_data.split("\n")
 
 # print(file_data)
