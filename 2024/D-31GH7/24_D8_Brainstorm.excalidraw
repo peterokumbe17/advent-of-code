@@ -358,20 +358,20 @@
       "index": "b87",
       "roundness": null,
       "seed": 1993874663,
-      "version": 546,
-      "versionNonce": 169479193,
+      "version": 552,
+      "versionNonce": 1679633857,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1736417242767,
+      "updated": 1740406437201,
       "link": null,
       "locked": false,
-      "text": "Grid has 2 antennas with DIFFERENT freq: 'A' & 'a'\n- '#' = antinodes\n- NOTE: 2 antinodes appear in positions outside of the bounds of the grid,\ntherefore they will not be included in calculations\n- NOTE: Antenna 'A' counts as BOTH an antenna AND antinode (for antenna 'a') in the grid.",
+      "text": "Grid has 2 antennas with DIFFERENT freq: 'A' & 'a'\n- '#' = antinodes\n- NOTE: 2 antinodes appear in positions outside of the bounds of the grid,\ntherefore they will NOT be included in calculations\n- NOTE: Antenna 'A' counts as BOTH an antenna AND antinode (for antenna 'a') in the grid.",
       "fontSize": 20,
       "fontFamily": 5,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Grid has 2 antennas with DIFFERENT freq: 'A' & 'a'\n- '#' = antinodes\n- NOTE: 2 antinodes appear in positions outside of the bounds of the grid,\ntherefore they will not be included in calculations\n- NOTE: Antenna 'A' counts as BOTH an antenna AND antinode (for antenna 'a') in the grid.",
+      "originalText": "Grid has 2 antennas with DIFFERENT freq: 'A' & 'a'\n- '#' = antinodes\n- NOTE: 2 antinodes appear in positions outside of the bounds of the grid,\ntherefore they will NOT be included in calculations\n- NOTE: Antenna 'A' counts as BOTH an antenna AND antinode (for antenna 'a') in the grid.",
       "autoResize": true,
       "lineHeight": 1.25
     },
@@ -11200,20 +11200,20 @@
       "index": "bAI",
       "roundness": null,
       "seed": 1253141593,
-      "version": 2148,
-      "versionNonce": 2096100183,
+      "version": 2150,
+      "versionNonce": 1186110657,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1736429016309,
+      "updated": 1740406508624,
       "link": null,
       "locked": false,
-      "text": "*IDEA:\n1. Traverse through entire grid and obtain EACh antenna (letter OR digit) -> Store in a list of antennas.\n2. Traverse through entire grid and store location positions of EACH antenna found and store in array lists.\n- E.g. arrAntA = [(x,y), (z,a), ... ]; arrAnt0/a = ...\n3. For EACH antenna array list, compare every possible pair of locations (2D for loop).\n4. IF a pair of locations = twice as far away from each other, then find locations of antinodes for EACH of these 2 found locations.\n- Q: How to determine if the coordinates of a line in a grid is cutting through the grid from TL 2 BR??\n- Then can say, IF line of found pair locations is cutting through grid from TL 2 BR, then TL_antinode = closer to (0,0) & BR_antinode = closer to (n,n)\n- IF line of found pair locations is cutting through grid from TR 2 BL, then TR_antinode = closer to (0,n) & BL_antinode = closer to (n,0)\n5. Add all found antinode locations to list arrAntiodes.\n6. Traverse through list of found antinode positions.\n7. IF antinode[0] OR antinode[1] >= 0 and <= (n - 1), then add to valid list of antinodes (E.g. arrValidAntinodes)\n8. Obtain thetotal number of valid antinodes in the list\n- E.g. 'sum(1 for _ in arrValidAntinodes)' -> 1 is added as a value to an array list for every item in arrValidAntinodes.",
+      "text": "*IDEA:\n1. Traverse through entire grid and obtain EACH antenna (letter OR digit) -> Store in a list of antennas.\n2. Traverse through entire grid and store location positions of EACH antenna found and store in array lists.\n- E.g. arrAntA = [(x,y), (z,a), ... ]; arrAnt0/a = ...\n3. For EACH antenna array list, compare every possible pair of locations (2D for loop).\n4. IF a pair of locations = twice as far away from each other, then find locations of antinodes for EACH of these 2 found locations.\n- Q: How to determine if the coordinates of a line in a grid is cutting through the grid from TL 2 BR??\n- Then can say, IF line of found pair locations is cutting through grid from TL 2 BR, then TL_antinode = closer to (0,0) & BR_antinode = closer to (n,n)\n- IF line of found pair locations is cutting through grid from TR 2 BL, then TR_antinode = closer to (0,n) & BL_antinode = closer to (n,0)\n5. Add all found antinode locations to list arrAntiodes.\n6. Traverse through list of found antinode positions.\n7. IF antinode[0] OR antinode[1] >= 0 and <= (n - 1), then add to valid list of antinodes (E.g. arrValidAntinodes)\n8. Obtain thetotal number of valid antinodes in the list\n- E.g. 'sum(1 for _ in arrValidAntinodes)' -> 1 is added as a value to an array list for every item in arrValidAntinodes.",
       "fontSize": 18.040080440371742,
       "fontFamily": 5,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "*IDEA:\n1. Traverse through entire grid and obtain EACh antenna (letter OR digit) -> Store in a list of antennas.\n2. Traverse through entire grid and store location positions of EACH antenna found and store in array lists.\n- E.g. arrAntA = [(x,y), (z,a), ... ]; arrAnt0/a = ...\n3. For EACH antenna array list, compare every possible pair of locations (2D for loop).\n4. IF a pair of locations = twice as far away from each other, then find locations of antinodes for EACH of these 2 found locations.\n- Q: How to determine if the coordinates of a line in a grid is cutting through the grid from TL 2 BR??\n- Then can say, IF line of found pair locations is cutting through grid from TL 2 BR, then TL_antinode = closer to (0,0) & BR_antinode = closer to (n,n)\n- IF line of found pair locations is cutting through grid from TR 2 BL, then TR_antinode = closer to (0,n) & BL_antinode = closer to (n,0)\n5. Add all found antinode locations to list arrAntiodes.\n6. Traverse through list of found antinode positions.\n7. IF antinode[0] OR antinode[1] >= 0 and <= (n - 1), then add to valid list of antinodes (E.g. arrValidAntinodes)\n8. Obtain thetotal number of valid antinodes in the list\n- E.g. 'sum(1 for _ in arrValidAntinodes)' -> 1 is added as a value to an array list for every item in arrValidAntinodes.",
+      "originalText": "*IDEA:\n1. Traverse through entire grid and obtain EACH antenna (letter OR digit) -> Store in a list of antennas.\n2. Traverse through entire grid and store location positions of EACH antenna found and store in array lists.\n- E.g. arrAntA = [(x,y), (z,a), ... ]; arrAnt0/a = ...\n3. For EACH antenna array list, compare every possible pair of locations (2D for loop).\n4. IF a pair of locations = twice as far away from each other, then find locations of antinodes for EACH of these 2 found locations.\n- Q: How to determine if the coordinates of a line in a grid is cutting through the grid from TL 2 BR??\n- Then can say, IF line of found pair locations is cutting through grid from TL 2 BR, then TL_antinode = closer to (0,0) & BR_antinode = closer to (n,n)\n- IF line of found pair locations is cutting through grid from TR 2 BL, then TR_antinode = closer to (0,n) & BL_antinode = closer to (n,0)\n5. Add all found antinode locations to list arrAntiodes.\n6. Traverse through list of found antinode positions.\n7. IF antinode[0] OR antinode[1] >= 0 and <= (n - 1), then add to valid list of antinodes (E.g. arrValidAntinodes)\n8. Obtain thetotal number of valid antinodes in the list\n- E.g. 'sum(1 for _ in arrValidAntinodes)' -> 1 is added as a value to an array list for every item in arrValidAntinodes.",
       "autoResize": true,
       "lineHeight": 1.25
     },
@@ -11362,7 +11362,7 @@
       "version": 3,
       "versionNonce": 234154518,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519019708,
       "link": null,
       "locked": false,
@@ -11378,10 +11378,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        0.0001,
-        0.0001
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "h7DBuAZsYQdq3xbE_8ZVH",
@@ -11406,7 +11403,7 @@
       "version": 78,
       "versionNonce": 1998125782,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519025056,
       "link": null,
       "locked": false,
@@ -11722,10 +11719,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        -13.083370701812328,
-        -5.451418322762265
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "8I5GCh6ETGai3y7fOen6X",
@@ -11750,7 +11744,7 @@
       "version": 48,
       "versionNonce": 2096678474,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519028476,
       "link": null,
       "locked": false,
@@ -11946,10 +11940,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        14.173554547914136,
-        1.0902670281438986
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "JaSEBJnvfl3j1B8clSQSu",
@@ -11974,7 +11965,7 @@
       "version": 43,
       "versionNonce": 333438678,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519053912,
       "link": null,
       "locked": false,
@@ -12048,7 +12039,7 @@
       "version": 17,
       "versionNonce": 1498402838,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519067204,
       "link": null,
       "locked": false,
@@ -12120,10 +12111,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        16.032471098130827,
-        23.514299098461606
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "zQ147du0S5i7sx4-xcsWZ",
@@ -12148,7 +12136,7 @@
       "version": 27,
       "versionNonce": 1910648534,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519069345,
       "link": null,
       "locked": false,
@@ -12260,10 +12248,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        30.996127098792385,
-        -21.3766281308408
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "lj2RJCgBrMJbHd-59ai7j",
@@ -12288,7 +12273,7 @@
       "version": 39,
       "versionNonce": 1597783318,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519073227,
       "link": null,
       "locked": false,
@@ -12448,10 +12433,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        228.73001885443637,
-        -72.68056826300563
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "FPP2hbdhwmDbEweL-86jj",
@@ -12476,7 +12458,7 @@
       "version": 33,
       "versionNonce": 553091990,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519074959,
       "link": null,
       "locked": false,
@@ -12612,10 +12594,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        -6.413053675544234,
-        51.303899359481875
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "JT9er2njHzW3LNgj_-Xrk",
@@ -12640,7 +12619,7 @@
       "version": 10,
       "versionNonce": 1612164438,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519082230,
       "link": null,
       "locked": false,
@@ -12679,7 +12658,7 @@
       "version": 120,
       "versionNonce": 346176214,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519102555,
       "link": null,
       "locked": false,
@@ -12722,7 +12701,7 @@
       "version": 94,
       "versionNonce": 1743019990,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519203865,
       "link": null,
       "locked": false,
@@ -13090,10 +13069,7 @@
       ],
       "pressures": [],
       "simulatePressure": true,
-      "lastCommittedPoint": [
-        79.09337730245443,
-        116.502517304109
-      ]
+      "lastCommittedPoint": null
     },
     {
       "id": "aAsAQvA0Hdg9oE0gizAOU",
@@ -13118,7 +13094,7 @@
       "version": 10,
       "versionNonce": 807930890,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519149510,
       "link": null,
       "locked": false,
@@ -13155,7 +13131,7 @@
       "version": 38,
       "versionNonce": 492259478,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519169030,
       "link": null,
       "locked": false,
@@ -13585,7 +13561,7 @@
       "version": 20,
       "versionNonce": 637958026,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1736519233983,
       "link": null,
       "locked": false,
@@ -13633,6 +13609,43 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "D2",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "3QWzITsT7SdBCGpfudkZ5",
+      "type": "text",
+      "x": 1179.4127260462205,
+      "y": 1113.892861787491,
+      "width": 1631.75,
+      "height": 211.62418459877694,
+      "angle": 0,
+      "strokeColor": "#1971c2",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "bAg",
+      "roundness": null,
+      "seed": 63742721,
+      "version": 693,
+      "versionNonce": 878942561,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1740406503860,
+      "link": null,
+      "locked": false,
+      "text": "*NEW IDEA:\n1. Calculate DISTANCE (D_same) between 2 points of 2 antennas of the SAME freq. (E.g. A & A).\n2. Traverse through grid and then calculate the distance (D_diff) between a non-empty ('.') block (E.g. '#'; 'A', etc.)\nand 1 of the 2 antennas currently being checked (E.g. A & A).\n3. IFF D_diff == D_same, then ADD the current non-empty block (that is NOT 1 of the 2 antennas) to antinode list.\n",
+      "fontSize": 28.216557946503595,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "*NEW IDEA:\n1. Calculate DISTANCE (D_same) between 2 points of 2 antennas of the SAME freq. (E.g. A & A).\n2. Traverse through grid and then calculate the distance (D_diff) between a non-empty ('.') block (E.g. '#'; 'A', etc.)\nand 1 of the 2 antennas currently being checked (E.g. A & A).\n3. IFF D_diff == D_same, then ADD the current non-empty block (that is NOT 1 of the 2 antennas) to antinode list.\n",
       "autoResize": true,
       "lineHeight": 1.25
     }
