@@ -5,7 +5,6 @@ const path = require("path");
 
 // *** [IMPORT DATA] ***
 // =====================================================================================================================
-
 // Get the current directory of this current file
 const currentDir = __dirname;
 
@@ -22,7 +21,6 @@ fileData = fileData.split("\r\n"); // "\r\n" - js generates this delimiter after
 let found = 0; // bool var to check if the empty line has been encountered
 let rules = []
 let updates = []
-
 
 for (let i = 0; i < fileData.length; i++) {
     if (fileData[i] == '') {
