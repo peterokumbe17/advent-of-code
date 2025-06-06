@@ -114,7 +114,7 @@ def get_antinodes_p1(_grid):
     antinodes_no_duplicates = list(set(antinodes))
 
     return len(antinodes_no_duplicates)
-# ====================================================================================================================
+# --------------------------------------------------------------------------------------------------------------------
 # %%
 def get_antinodes_p1_alt(_grid):
     antennas = []
@@ -167,7 +167,7 @@ def get_antinodes_p1_alt(_grid):
                     antinodes.add((ant_x2, ant_y2))
     
     return len(antinodes)
-# ====================================================================================================================
+# --------------------------------------------------------------------------------------------------------------------
 # %%
 def get_antinodes_p2(grid):
     antennas = []
@@ -253,7 +253,6 @@ def get_antinodes_p2(grid):
     return len(antinodes)
 # ====================================================================================================================
 # %% [markdown]
-# ## Part 1
 
 # %%
 # *** [PART 1] ***
@@ -265,13 +264,12 @@ def get_antinodes_p2(grid):
 # ! Create a deep (independent) copy of the grid data, such that changes made to the copy do not affect the original grid to still test/re-run Part 1 with the correct INITIAL (and not modified) grid
 # - NOTE: Not using a deep copy will modify the original grid after running Part 1, therefore no correct output will be calculated anymore
 grid_p1 = copy.deepcopy(grid)
-numAntinodes = get_antinodes_p1_alt(grid_p1)
+numAntinodes = get_antinodes_p1(grid_p1)
 
 print("Number of unique locations within grid with antinodes (PART 1):", numAntinodes)
 # ====================================================================================================================
 
 # %% [markdown]
-# ## Part 2
 
 # %%
 # *** [PART 2] ***
