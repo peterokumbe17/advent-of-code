@@ -104,7 +104,7 @@ print("Number of zeros (PART 1): ", numZero)
 # %%
 # *** [PART 2] ***
 # ! PROBLEM: As you're rolling the snowballs for your snowman, you find another security document that must have fallen into the snow: "Due to newer security protocols, please use password method: '0x434C49434B' until further notice."
-# - This means that you're actually supposed to count the *number of times ANY click causes the dial to point at 0, regardless of whether it happens DURING a rotation OR at the END of one.
+# - NOTE: This means that you're actually supposed to count the *number of times ANY click causes the dial to point at 0, regardless of whether it happens DURING a rotation OR at the END of one.
 # - TODO: The actual password = the number of times the dial points at 0 *during AND *after EACH rotation in the sequence.
 # ---------------------------------------------------------------------------------------------------------------------
 # ! Create a deep (independent) copy of the data, such that changes made does not affect the original data used to test/re-run Part 1/2 independently.
